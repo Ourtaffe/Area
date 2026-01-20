@@ -1,0 +1,15 @@
+### UTILITÉ DE CHAQUE TABLE – EXPLICATION ULTRA SIMPLE (à dire au jury en 2 min)
+
+| Table                | À quoi elle sert (en 1 phrase simple)                                      |
+|----------------------|-----------------------------------------------------------------------------|
+| **users**            | Les comptes des gens qui utilisent l’appli                                  |
+| **oauth_providers**  | Garde les tokens quand quelqu’un se connecte avec Google ou Discord        |
+| **services**         | Liste des applis externes : Timer, Météo, Discord, GitHub, etc.            |
+| **user_services**    | Les paramètres perso de chaque utilisateur pour chaque service (ex: ville météo) |
+| **actions**          | Les « SI » possibles (ex: « toutes les 8h », « il pleut », « nouveau mail ») |
+| **reactions**        | Les « ALORS » possibles (ex: « envoyer message Discord », « envoyer mail ») |
+| **areas**            | Une automatisation complète d’un utilisateur : « SI + ALORS » + ON/OFF     |
+| **hooks**            | Historique de chaque fois que le serveur a essayé de lancer une AREA       |
+| **triggers_history** | Historique précis des fois où le « SI » a été vrai et a déclenché l’automatisation |
+| **mobile_builds**    | Stocke les versions de l’APK Android pour que les gens puissent le télécharger |
+
