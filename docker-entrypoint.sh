@@ -5,8 +5,11 @@ set -e
 echo "Waiting for database..."
 until php -r "
 try {
-    \$pdo = new PDO('mysql:host=${DB_HOST:-db};port=${DB_PORT:-3306};dbname=${DB_DATABASE:-action_reaction}', '${DB_USERNAME:-area}', '${DB_PASSWORD:-area}');
+    \$pdo = new PDO('mysql:host=${DB_HOST:-db};port=${DB_PORT:-3306}', '${DB_USERNAME:-area}', '${DB_PASSWORD:-area}');
     \$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    \$dbname = "${DB_DATABASE:-action_reaction}";
+    \$pdo->exec("CREATE DATABASE IF NOT EXISTS \`\$dbname\`");
+    \$pdo->exec("USE \`\$dbname\`");
     \$pdo->query('SELECT 1');
     echo 'Database is ready';
     exit(0);
